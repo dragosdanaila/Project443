@@ -9,7 +9,7 @@ class Man {
     constructor() {
         this.r = 35
         this.x = this.r;
-        this.y = height - this.r*6;
+        this.y = height - this.r*5;
         this.vy = 0;
         this.gravity = 1.8;
     }
@@ -17,14 +17,14 @@ class Man {
 //define jump function
 //define to jump only when "man" reach ground level
   jump() {
-    if (this.y == height - this.r*6) {
+    if (this.y == height - this.r*5) {
     this.vy = -30;
       }
   }
   
 //define collision between man and covid using p5.collide2D library from bmoren (on github). it offers boolean variable if given x,y,width and height of 2 rectangles
   hits(covid) {
-    return collideRectRect(this.x, this.y, this.r, this.r*3,covid.x, covid.y, covid.r, covid.r*3);
+    return collideRectRect(this.x, this.y, this.r, this.r*2.5,covid.x-25, covid.y, covid.r, covid.r);
   }
   
 //define movement on y scale
@@ -33,11 +33,11 @@ class Man {
   move() {
     this.y += this.vy;
     this.vy += this.gravity;
-    this.y = constrain(this.y, 0, height - this.r*6);
+    this.y = constrain(this.y, 0, height - this.r*5);
   }
 
 //define where to display and size
     show() {
-        image(manImg, this.x, this.y, this.r*1.5, this.r*6);
+        image(manImg, this.x, this.y, this.r*3.5, this.r*5);
     }
 }

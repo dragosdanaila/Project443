@@ -10,12 +10,12 @@ let covids = []
 function preload() {
   manImg = loadImage('man.png');
   covidImg = loadImage('covid.png');
-  backImg = loadImage('background1.jpg');
+  backImg = loadImage('background2.png');
 }
 
 //define setup function, create canvas according to background image and setup man function
 function setup() {
-    createCanvas(900, 615);
+    createCanvas(800, 450);
     man = new Man();
 }
 //define "space" key function
@@ -27,7 +27,7 @@ function keyPressed() {
 //define draw, offer random "covid" shots with reduced alternation
 function draw() {
   
-  if (random(1) <0.002) {
+  if (random(1) <0.003) {
     covids.push(new Covid()); 
   }
   
@@ -46,7 +46,7 @@ function draw() {
           stroke (0);
           strokeWeight (4);
           fill (250);
-        text('You are dead!',270,180);
+        text('You are dead!',200,100);
         noLoop();
       }
     }

@@ -5,7 +5,7 @@
 //define the location
 class Covid {
     constructor() {
-      this.r = 30;
+      this.r = 20;
       this.x = width;
       this.y = height - this.r*4.9;
     }
